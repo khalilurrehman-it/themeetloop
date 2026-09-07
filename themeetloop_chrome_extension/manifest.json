@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "MeetLoop Live Captions",
+  "version": "0.1.0",
+  "description": "Transfers Google Meet captions to an active MeetLoop capture session.",
+  "permissions": ["storage", "notifications"],
+  "host_permissions": ["https://meet.google.com/*", "http://localhost:3000/*"],
+  "background": {
+    "service_worker": "dist/background/extensionBackgroundServiceWorker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["dist/content/googleMeetCaptionContentScript.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["http://localhost:3000/*"],
+      "js": ["dist/content/meetLoopApplicationBridgeContentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

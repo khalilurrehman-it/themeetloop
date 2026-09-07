@@ -1,0 +1,7 @@
+node_modules/
+
+# Compiled output. manifest.json points at dist/, so run
+# `pnpm --filter themeetloop_chrome_extension build` before loading the unpacked extension.
+dist/
+
+*.log

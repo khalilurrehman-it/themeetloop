@@ -1,0 +1,16 @@
+{
+  "name": "themeetloop",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.2",
+  "scripts": {
+    "dev": "pnpm --parallel --stream --filter themeetloop_backend --filter themeetloop_nextjs dev",
+    "build": "pnpm --filter themeetloop_backend build && pnpm --filter themeetloop_nextjs build && pnpm --filter themeetloop_chrome_extension build",
+    "install:applications": "pnpm install",
+    "format": "prettier --write \"themeetloop_backend/**/*.{ts,tsx,json,md}\" \"themeetloop_nextjs/**/*.{ts,tsx,css,json,md}\" \"themeetloop_chrome_extension/**/*.{ts,json,md}\" --ignore-unknown",
+    "format:check": "prettier --check \"themeetloop_backend/**/*.{ts,tsx,json,md}\" \"themeetloop_nextjs/**/*.{ts,tsx,css,json,md}\" \"themeetloop_chrome_extension/**/*.{ts,json,md}\" --ignore-unknown"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6"
+  }
+}

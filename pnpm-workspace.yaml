@@ -1,0 +1,8 @@
+packages:
+  - "themeetloop_backend"
+  - "themeetloop_nextjs"
+  - "themeetloop_chrome_extension"
+
+onlyBuiltDependencies:
+  - "sharp"
+  - "unrs-resolver"
